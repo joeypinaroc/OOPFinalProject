@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class Form1 : Form
+    public partial class WelcomePage : Form
     {
         private Player generatedPlayer;
         public static List<Job> joblist = new List<Job>()
@@ -27,7 +27,7 @@ namespace FinalProject
             { 2, "Intelligence" }
         };
         
-        public Form1()
+        public WelcomePage()
         {
             InitializeComponent();
 
