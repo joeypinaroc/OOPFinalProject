@@ -13,7 +13,6 @@ namespace FinalProject
 {
     public partial class WelcomePage : Form
     {
-        SoundPlayer backgroundSound; // Background music object object
 
         private Player generatedPlayer;
         public static List<Job> joblist = new List<Job>()
@@ -33,23 +32,26 @@ namespace FinalProject
         public WelcomePage()
         {
             InitializeComponent();
-            backgroundSound = new SoundPlayer(Properties.Resources.background_music); // Set background music
-            backgroundSound.Play();
+            SoundEffect.BackgroundMusic();
             textHolder1.Content = "WELCOME TO DUNGEON GAME";
             foreach (Job job in joblist) // combobox has DropDownStyle = DropDownList
             {
                 cb_Job.Items.Add(job.JobName);
             }
+            tb_Name.Text = "NEW PLAYER";
+            cb_Job.SelectedIndex = 0;   
         }
 
         private void btn_WelcomeCreatePlayer_Click(object sender, EventArgs e)
-        {
+        {     
             panel_CreatePlayer.Visible = true;
             btn_WelcomeCreatePlayer.Visible = false;
+            SoundEffect.MouseClickSound();
         }
 
         private void btn_CreatePlayer_Click(object sender, EventArgs e)
         {
+            SoundEffect.MouseClickSound();
             string playerName = tb_Name.Text;
             string chosenJobName = cb_Job.SelectedItem.ToString();
             Job chosenJob = joblist.Find(job => job.JobName == chosenJobName);
@@ -78,9 +80,20 @@ namespace FinalProject
             }
         }
 
-        private void textHolder1_Load(object sender, EventArgs e)
+        private void cb_Job_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cb_Job.SelectedIndex == 0)
+            {
+                characterImg.Image = Properties.Resources.farmer;
+            }
+            else if (cb_Job.SelectedIndex == 1)
+            {
+                characterImg.Image = Properties.Resources.scholar;
+            }
+            else
+            {
+                characterImg.Image = Properties.Resources.bard;
+            }
         }
     }
 }
