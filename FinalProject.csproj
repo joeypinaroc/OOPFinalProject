@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conflict.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\TextHolder.cs">

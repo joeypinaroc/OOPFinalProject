@@ -15,6 +15,8 @@ namespace FinalProject
     {
 
         private Player generatedPlayer;
+        private Conflict currentConflict;
+        private Dice dice = new Dice();
         public static List<Job> joblist = new List<Job>()
         {
             new Job{Id = 1, JobName = "Farmer"},
@@ -56,8 +58,6 @@ namespace FinalProject
             string chosenJobName = cb_Job.SelectedItem.ToString();
             Job chosenJob = joblist.Find(job => job.JobName == chosenJobName);
 
-            //Player player1 = new Player(playerName, chosenJob);
-
             PlayerGenerator p = new PlayerGenerator();
             p.PlayerGenerated += OnPlayerGenerated;
 
@@ -66,9 +66,6 @@ namespace FinalProject
         private void OnPlayerGenerated(object sender, PlayerGeneratedEventArgs e)
         {
             generatedPlayer = e.CreatedPlayer;
-
-            MessageBox.Show("Player created: " + generatedPlayer.Name + " with job: " + generatedPlayer.Job.JobName + "\n" +
-               "You have the following attributes: " + "\nStrength: " + generatedPlayer.Strength + "\nCharisma: " + generatedPlayer.Charisma + "\nIntelligence: " + generatedPlayer.Intelligence);
 
             ClearForm();
         }
@@ -79,21 +76,7 @@ namespace FinalProject
                 control.Visible = false;
             }
         }
+        
 
-        private void cb_Job_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_Job.SelectedIndex == 0)
-            {
-                characterImg.Image = Properties.Resources.farmer;
-            }
-            else if (cb_Job.SelectedIndex == 1)
-            {
-                characterImg.Image = Properties.Resources.scholar;
-            }
-            else
-            {
-                characterImg.Image = Properties.Resources.bard;
-            }
-        }
     }
 }
