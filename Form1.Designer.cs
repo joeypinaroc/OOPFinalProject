@@ -36,7 +36,21 @@
             this.lbl_CPJob = new System.Windows.Forms.Label();
             this.tb_Name = new System.Windows.Forms.TextBox();
             this.lbl_CPName = new System.Windows.Forms.Label();
+            this.rtb_Attributes = new System.Windows.Forms.RichTextBox();
+            this.pb_PlayerImage = new System.Windows.Forms.PictureBox();
+            this.pb_Background = new System.Windows.Forms.PictureBox();
+            this.panel_TextPanel = new System.Windows.Forms.Panel();
+            this.lbl_Choice3 = new System.Windows.Forms.Label();
+            this.lbl_Choice2 = new System.Windows.Forms.Label();
+            this.lbl_Choice1 = new System.Windows.Forms.Label();
+            this.btn_Choice3 = new System.Windows.Forms.Button();
+            this.btn_Choice2 = new System.Windows.Forms.Button();
+            this.btn_Choice1 = new System.Windows.Forms.Button();
+            this.rtb_ConflictText = new System.Windows.Forms.RichTextBox();
             this.panel_CreatePlayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Background)).BeginInit();
+            this.panel_TextPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Welcome
@@ -115,18 +129,135 @@
             this.lbl_CPName.TabIndex = 0;
             this.lbl_CPName.Text = "Name: ";
             // 
+            // rtb_Attributes
+            // 
+            this.rtb_Attributes.Location = new System.Drawing.Point(34, 201);
+            this.rtb_Attributes.Name = "rtb_Attributes";
+            this.rtb_Attributes.Size = new System.Drawing.Size(199, 172);
+            this.rtb_Attributes.TabIndex = 3;
+            this.rtb_Attributes.Text = "";
+            this.rtb_Attributes.Visible = false;
+            // 
+            // pb_PlayerImage
+            // 
+            this.pb_PlayerImage.Location = new System.Drawing.Point(34, 74);
+            this.pb_PlayerImage.Name = "pb_PlayerImage";
+            this.pb_PlayerImage.Size = new System.Drawing.Size(199, 108);
+            this.pb_PlayerImage.TabIndex = 4;
+            this.pb_PlayerImage.TabStop = false;
+            this.pb_PlayerImage.Visible = false;
+            // 
+            // pb_Background
+            // 
+            this.pb_Background.Location = new System.Drawing.Point(269, 78);
+            this.pb_Background.Name = "pb_Background";
+            this.pb_Background.Size = new System.Drawing.Size(718, 365);
+            this.pb_Background.TabIndex = 5;
+            this.pb_Background.TabStop = false;
+            this.pb_Background.Visible = false;
+            // 
+            // panel_TextPanel
+            // 
+            this.panel_TextPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.panel_TextPanel.Controls.Add(this.lbl_Choice3);
+            this.panel_TextPanel.Controls.Add(this.lbl_Choice2);
+            this.panel_TextPanel.Controls.Add(this.lbl_Choice1);
+            this.panel_TextPanel.Controls.Add(this.btn_Choice3);
+            this.panel_TextPanel.Controls.Add(this.btn_Choice2);
+            this.panel_TextPanel.Controls.Add(this.btn_Choice1);
+            this.panel_TextPanel.Controls.Add(this.rtb_ConflictText);
+            this.panel_TextPanel.Location = new System.Drawing.Point(34, 480);
+            this.panel_TextPanel.Name = "panel_TextPanel";
+            this.panel_TextPanel.Size = new System.Drawing.Size(953, 171);
+            this.panel_TextPanel.TabIndex = 6;
+            this.panel_TextPanel.Visible = false;
+            // 
+            // lbl_Choice3
+            // 
+            this.lbl_Choice3.AutoSize = true;
+            this.lbl_Choice3.Location = new System.Drawing.Point(246, 144);
+            this.lbl_Choice3.Name = "lbl_Choice3";
+            this.lbl_Choice3.Size = new System.Drawing.Size(49, 13);
+            this.lbl_Choice3.TabIndex = 6;
+            this.lbl_Choice3.Text = "Choice 3";
+            // 
+            // lbl_Choice2
+            // 
+            this.lbl_Choice2.AutoSize = true;
+            this.lbl_Choice2.Location = new System.Drawing.Point(246, 114);
+            this.lbl_Choice2.Name = "lbl_Choice2";
+            this.lbl_Choice2.Size = new System.Drawing.Size(49, 13);
+            this.lbl_Choice2.TabIndex = 5;
+            this.lbl_Choice2.Text = "Choice 2";
+            // 
+            // lbl_Choice1
+            // 
+            this.lbl_Choice1.AutoSize = true;
+            this.lbl_Choice1.Location = new System.Drawing.Point(246, 84);
+            this.lbl_Choice1.Name = "lbl_Choice1";
+            this.lbl_Choice1.Size = new System.Drawing.Size(46, 13);
+            this.lbl_Choice1.TabIndex = 4;
+            this.lbl_Choice1.Text = "Choice1";
+            // 
+            // btn_Choice3
+            // 
+            this.btn_Choice3.Location = new System.Drawing.Point(203, 139);
+            this.btn_Choice3.Name = "btn_Choice3";
+            this.btn_Choice3.Size = new System.Drawing.Size(28, 23);
+            this.btn_Choice3.TabIndex = 3;
+            this.btn_Choice3.Text = "3";
+            this.btn_Choice3.UseVisualStyleBackColor = true;
+            this.btn_Choice3.Click += new System.EventHandler(this.btn_Choice3_Click);
+            // 
+            // btn_Choice2
+            // 
+            this.btn_Choice2.Location = new System.Drawing.Point(203, 109);
+            this.btn_Choice2.Name = "btn_Choice2";
+            this.btn_Choice2.Size = new System.Drawing.Size(28, 23);
+            this.btn_Choice2.TabIndex = 2;
+            this.btn_Choice2.Text = "2";
+            this.btn_Choice2.UseVisualStyleBackColor = true;
+            this.btn_Choice2.Click += new System.EventHandler(this.btn_Choice2_Click);
+            // 
+            // btn_Choice1
+            // 
+            this.btn_Choice1.Location = new System.Drawing.Point(203, 79);
+            this.btn_Choice1.Name = "btn_Choice1";
+            this.btn_Choice1.Size = new System.Drawing.Size(28, 23);
+            this.btn_Choice1.TabIndex = 1;
+            this.btn_Choice1.Text = "1";
+            this.btn_Choice1.UseVisualStyleBackColor = true;
+            this.btn_Choice1.Click += new System.EventHandler(this.btn_Choice1_Click);
+            // 
+            // rtb_ConflictText
+            // 
+            this.rtb_ConflictText.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.rtb_ConflictText.Location = new System.Drawing.Point(68, 15);
+            this.rtb_ConflictText.Name = "rtb_ConflictText";
+            this.rtb_ConflictText.Size = new System.Drawing.Size(807, 48);
+            this.rtb_ConflictText.TabIndex = 0;
+            this.rtb_ConflictText.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.Controls.Add(this.panel_TextPanel);
+            this.Controls.Add(this.pb_PlayerImage);
+            this.Controls.Add(this.rtb_Attributes);
             this.Controls.Add(this.panel_CreatePlayer);
             this.Controls.Add(this.btn_WelcomeCreatePlayer);
             this.Controls.Add(this.lbl_Welcome);
+            this.Controls.Add(this.pb_Background);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel_CreatePlayer.ResumeLayout(false);
             this.panel_CreatePlayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Background)).EndInit();
+            this.panel_TextPanel.ResumeLayout(false);
+            this.panel_TextPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,6 +273,17 @@
         private System.Windows.Forms.Label lbl_CPJob;
         private System.Windows.Forms.TextBox tb_Name;
         private System.Windows.Forms.Label lbl_CPName;
+        private System.Windows.Forms.RichTextBox rtb_Attributes;
+        private System.Windows.Forms.PictureBox pb_PlayerImage;
+        private System.Windows.Forms.PictureBox pb_Background;
+        private System.Windows.Forms.Panel panel_TextPanel;
+        private System.Windows.Forms.Label lbl_Choice3;
+        private System.Windows.Forms.Label lbl_Choice2;
+        private System.Windows.Forms.Label lbl_Choice1;
+        private System.Windows.Forms.Button btn_Choice3;
+        private System.Windows.Forms.Button btn_Choice2;
+        private System.Windows.Forms.Button btn_Choice1;
+        private System.Windows.Forms.RichTextBox rtb_ConflictText;
     }
 }
 
