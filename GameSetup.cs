@@ -16,14 +16,6 @@ namespace FinalProject
             new Job{Id = 3, JobName = "Scholar"}
         };
 
-        // Dictionary of character attribututes
-        public static Dictionary<int, string> attributeDictionary = new Dictionary<int, string>()
-        {
-            { 0, "Strength" },
-            { 1, "Charisma" },
-            { 2, "Intelligence" }
-        };
-
         // GameSetup constructor
         public GameSetup()
         {
@@ -91,7 +83,7 @@ namespace FinalProject
             p.PlayerGenerated += OnPlayerGenerated; // Subscribe event
             p.Generate(playerName, chosenJob);
         }
-
+        
         // Event when a player is generated
         private void OnPlayerGenerated(object sender, PlayerGeneratedEventArgs e)
         {
@@ -103,7 +95,6 @@ namespace FinalProject
             // Show the PlayerPreview form as a modal dialog
             this.Hide();
             playerPreview.ShowDialog();
-
         }
     }
 }

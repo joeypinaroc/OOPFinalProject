@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conflict.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="GamePlay.cs">
       <SubType>Form</SubType>
@@ -160,9 +161,6 @@
     <None Include="Resources\background-music.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Textholder1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button.png" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +174,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-bard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-farmer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-scholar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

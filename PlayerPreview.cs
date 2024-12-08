@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
 
 namespace FinalProject
 {
@@ -16,10 +17,11 @@ namespace FinalProject
         private GameSetup GameSetupForm; // Reference to GameSetup form
         
         // PlayerPreview Constructor
-        public PlayerPreview(Player player, GameSetup GameSetupForm)
+        public PlayerPreview(Player createdPlayer, GameSetup GameSetupForm)
         {
             InitializeComponent();
             this.GameSetupForm = GameSetupForm; // Store the reference
+            player = createdPlayer;
             // Update Name, Job and stats based on player selection
             textHolder_Title.Content = "PLAYER PREVIEW";
             lbl_Name_Value.Text = player.Name;
@@ -45,7 +47,13 @@ namespace FinalProject
         // Event when Play button is clicked
         private void btn_Play_Click(object sender, EventArgs e)
         {
+            // Play selection change sound effect
             SoundEffect.MouseClickSound();
+            // Show Gameplay popup
+            GamePlay gamePlayForm = new GamePlay(player);
+            gamePlayForm.Show();
+            // Close this popup and Gamesetup form
+            this.Close();
         }
 
         // Event when Cancel button is clicked
@@ -55,7 +63,7 @@ namespace FinalProject
             SoundEffect.MouseClickSound();
             // Close Player preview window and show GameSetup window
             GameSetupForm.Show();
-            this.Close();
+            this.Close(); // Close this popup
         }
     }
 }

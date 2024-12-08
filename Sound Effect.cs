@@ -28,7 +28,7 @@ namespace FinalProject
         // Play background music
         public static void BackgroundMusic()
         {
-            //backgroundSound?.PlayLooping(); // Play background music
+            backgroundSound?.PlayLooping(); // Play background music
         }
 
         // Play mouseclick sound
