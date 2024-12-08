@@ -36,15 +36,21 @@ namespace FinalProject
                 // Draw the background
                 g.FillRectangle(new SolidBrush(this.BackColor), rect);
 
-                // Calculate the progress bar width
                 rect.Width = (int)(rect.Width * ((double)this.Value / this.Maximum));
 
-                // Draw the progress bar
                 g.FillRectangle(new SolidBrush(this.BarColor), rect);
 
-                // Optional: Draw the border
                 g.DrawRectangle(Pens.Black, 0, 0, this.Width - 1, this.Height - 1);
             }
         }
+
+        // Property to modify
+        public void  SetStat(int strength, int intelligence, int charisma)
+        {
+            progressBar_Str.Value = strength;
+            progressBar_Int.Value = intelligence;
+            progressBar_Chr.Value = charisma;
+        }
+
     }
 }

@@ -18,17 +18,17 @@ namespace FinalProject
 
         static SoundEffect()
         {
+            // Initialize sounds
             backgroundSound = new SoundPlayer(Properties.Resources.background_music); // Set background music
             mouseClickSound = new AudioFileReader("../../Resources/click.wav");
             mouseClickSoundPlayer = new WaveOut();
-            mouseClickSoundPlayer.Init(mouseClickSound);
-            
+            mouseClickSoundPlayer.Init(mouseClickSound);      
         }
 
         // Play background music
         public static void BackgroundMusic()
         {
-            backgroundSound?.PlayLooping(); // Play background music
+            //backgroundSound?.PlayLooping(); // Play background music
         }
 
         // Play mouseclick sound
