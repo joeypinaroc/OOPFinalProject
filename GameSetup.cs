@@ -101,6 +101,8 @@ namespace FinalProject
         {
             // Play selection change sound effect
             SoundEffect.MouseClickSound();
+            About About = new About();
+            About.ShowDialog();
 
         }
     }

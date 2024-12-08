@@ -42,7 +42,7 @@
             this.btn_Continue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Continue.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Continue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_Continue.Location = new System.Drawing.Point(218, 288);
+            this.btn_Continue.Location = new System.Drawing.Point(218, 282);
             this.btn_Continue.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Continue.Name = "btn_Continue";
             this.btn_Continue.Size = new System.Drawing.Size(230, 60);
@@ -75,11 +75,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(461, 357);
+            this.ClientSize = new System.Drawing.Size(462, 353);
             this.Controls.Add(this.lbl_ConflictResult);
             this.Controls.Add(this.btn_Continue);
             this.Controls.Add(this.media_RollingDice);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

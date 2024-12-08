@@ -55,6 +55,7 @@ namespace FinalProject
         // Even to handle clicking the continue button
         private void btn_Continue_Click(object sender, EventArgs e)
         {
+            SoundEffect.MouseClickSound();
             media_RollingDice.Ctlcontrols.stop();
             media_RollingDice.close();
             this.Close();
