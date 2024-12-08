@@ -96,6 +96,12 @@
     <Compile Include="GamePlay.Designer.cs">
       <DependentUpon>GamePlay.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameResult.Designer.cs">
+      <DependentUpon>GameResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="PlayerPreview.cs">
       <SubType>Form</SubType>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GamePlay.resx">
       <DependentUpon>GamePlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameResult.resx">
+      <DependentUpon>GameResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerPreview.resx">
       <DependentUpon>PlayerPreview.cs</DependentUpon>

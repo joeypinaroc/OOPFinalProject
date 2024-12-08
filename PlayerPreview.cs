@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
@@ -50,10 +51,10 @@ namespace FinalProject
             // Play selection change sound effect
             SoundEffect.MouseClickSound();
             // Show Gameplay popup
-            GamePlay gamePlayForm = new GamePlay(player);
+            GamePlay gamePlayForm = new GamePlay(player, GameSetupForm);
             gamePlayForm.Show();
-            // Close this popup and Gamesetup form
-            this.Close();
+            // Close this popup
+            this.Hide();
         }
 
         // Event when Cancel button is clicked
@@ -63,7 +64,12 @@ namespace FinalProject
             SoundEffect.MouseClickSound();
             // Close Player preview window and show GameSetup window
             GameSetupForm.Show();
-            this.Close(); // Close this popup
+            this.Hide(); // Close this popup
+        }
+
+        private void PlayerPreview_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

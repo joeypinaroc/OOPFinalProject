@@ -16,6 +16,7 @@ namespace FinalProject
         private Conflict currentConflict;
         private Dice dice = new Dice();
         private string conflictResult;
+        private GameSetup GameSetupForm; // Reference to GameSetup form
 
         public static Dictionary<int, string> attributeDictionary = new Dictionary<int, string>()
         {
@@ -75,9 +76,10 @@ namespace FinalProject
             new Ending { EndingID = 7, EndingText = "You get Ending 7!"},
             new Ending { EndingID = 8, EndingText = "You get Ending 8!"},
         };
-        public GamePlay(Player createdPlayer)
+        public GamePlay(Player createdPlayer, GameSetup GameSetupForm)
         {
             InitializeComponent();
+            this.GameSetupForm = GameSetupForm; // Store the reference
             generatedPlayer = createdPlayer;
             if (generatedPlayer.Job.JobName == "Farmer")
             {
@@ -194,7 +196,9 @@ namespace FinalProject
 
         private void InitiateEnding(Ending ending)
         {
-            MessageBox.Show(ending.EndingText);
+            GameResult GameResult = new GameResult(ending.EndingText, generatedPlayer, GameSetupForm, this);
+            GameResult.Show();
+            this.Hide();
         }
 
         private void btn_Choice1_Click(object sender, EventArgs e)
@@ -658,10 +662,10 @@ namespace FinalProject
             UpdateConflict(currentConflict);
             UpdateChoices();
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void GamePlay_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-            Application.Exit(); // Ensure all threads and forms are terminated
+            Application.Exit();
         }
     }
 }

@@ -41,13 +41,12 @@ namespace FinalProject
             SoundEffect.RollingDiceSound();
             // Delay and then update the result
             ShowResultWithDelay(result);
-            // Wait for 2 seconds
         }
 
         // Async method to handle the delay and update the label
         private async void ShowResultWithDelay(string result)
         {
-            await Task.Delay(3000); // Wait for 2 seconds
+            await Task.Delay(3000); // Wait for 3 seconds
             lbl_ConflictResult.Content = result; // Update the label content
             btn_Continue.Visible = true;
         }

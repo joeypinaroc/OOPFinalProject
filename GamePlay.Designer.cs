@@ -34,9 +34,9 @@
             this.btn_Choice1 = new System.Windows.Forms.Button();
             this.btn_Choice2 = new System.Windows.Forms.Button();
             this.btn_Choice3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_ConflictText = new FinalProject.Properties.TextHolder();
             this.statusBar = new FinalProject.Stats();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.characterAvtar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -117,6 +117,17 @@
             this.btn_Choice3.UseVisualStyleBackColor = false;
             this.btn_Choice3.Click += new System.EventHandler(this.btn_Choice3_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btn_Choice2);
+            this.panel1.Controls.Add(this.btn_Choice3);
+            this.panel1.Controls.Add(this.btn_Choice1);
+            this.panel1.Location = new System.Drawing.Point(270, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(582, 265);
+            this.panel1.TabIndex = 16;
+            // 
             // lbl_ConflictText
             // 
             this.lbl_ConflictText.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("lbl_ConflictText.BackgroundImage")));
@@ -136,17 +147,6 @@
             this.statusBar.Size = new System.Drawing.Size(475, 109);
             this.statusBar.TabIndex = 1;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btn_Choice2);
-            this.panel1.Controls.Add(this.btn_Choice3);
-            this.panel1.Controls.Add(this.btn_Choice1);
-            this.panel1.Location = new System.Drawing.Point(270, 150);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(582, 265);
-            this.panel1.TabIndex = 16;
-            // 
             // GamePlay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -160,9 +160,11 @@
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GamePlay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DUNGEON GAME";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GamePlay_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.characterAvtar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

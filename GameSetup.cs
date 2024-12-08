@@ -93,17 +93,16 @@ namespace FinalProject
             PlayerPreview playerPreview = new PlayerPreview(player, this);
 
             // Show the PlayerPreview form as a modal dialog
+            playerPreview.Show();
             this.Hide();
-            playerPreview.ShowDialog();
         }
 
         private void btn_About_Click(object sender, EventArgs e)
         {
-            // Play selection change sound effect
+            // Play selection change sound eff
             SoundEffect.MouseClickSound();
             About About = new About();
             About.ShowDialog();
-
         }
     }
 }

@@ -45,9 +45,9 @@
             // 
             this.characterImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.characterImg.Image = ((System.Drawing.Image)(resources.GetObject("characterImg.Image")));
-            this.characterImg.Location = new System.Drawing.Point(675, 54);
+            this.characterImg.Location = new System.Drawing.Point(689, 54);
             this.characterImg.Name = "characterImg";
-            this.characterImg.Size = new System.Drawing.Size(360, 505);
+            this.characterImg.Size = new System.Drawing.Size(339, 505);
             this.characterImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.characterImg.TabIndex = 8;
             this.characterImg.TabStop = false;
@@ -168,9 +168,11 @@
             this.Controls.Add(this.characterImg);
             this.Controls.Add(this.textHolder_Title);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "PlayerPreview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DUNGEON GAME";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayerPreview_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.characterImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
