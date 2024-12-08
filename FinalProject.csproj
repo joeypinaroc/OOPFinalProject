@@ -78,6 +78,12 @@
   <ItemGroup>
     <Compile Include="Conflict.cs" />
     <Compile Include="Dice.cs" />
+    <Compile Include="Dice_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dice_UI.Designer.cs">
+      <DependentUpon>Dice_UI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GamePlay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dice_UI.resx">
+      <DependentUpon>Dice_UI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GamePlay.resx">
       <DependentUpon>GamePlay.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,10 +197,29 @@
     <None Include="Resources\border.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\border1.png" />
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\border2.png" />
+    <None Include="Resources\rollingdice.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rollingdice-sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

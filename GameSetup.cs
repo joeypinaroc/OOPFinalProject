@@ -96,5 +96,12 @@ namespace FinalProject
             this.Hide();
             playerPreview.ShowDialog();
         }
+
+        private void btn_About_Click(object sender, EventArgs e)
+        {
+            // Play selection change sound effect
+            SoundEffect.MouseClickSound();
+
+        }
     }
 }

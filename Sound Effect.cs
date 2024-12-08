@@ -15,6 +15,8 @@ namespace FinalProject
         private static SoundPlayer backgroundSound; // Background music object
         private static WaveStream mouseClickSound; // Mouse click audio object
         private static WaveOut mouseClickSoundPlayer; // Mouse click audio out object
+        private static WaveStream rollingDiceSound; // Rolling dice audio object
+        private static WaveOut rollingDiceSoundPlayer; // Rolling dice audio out object
 
         static SoundEffect()
         {
@@ -22,7 +24,10 @@ namespace FinalProject
             backgroundSound = new SoundPlayer(Properties.Resources.background_music); // Set background music
             mouseClickSound = new AudioFileReader("../../Resources/click.wav");
             mouseClickSoundPlayer = new WaveOut();
-            mouseClickSoundPlayer.Init(mouseClickSound);      
+            mouseClickSoundPlayer.Init(mouseClickSound);
+            rollingDiceSound = new AudioFileReader("../../Resources/rollingdice-sound.wav");
+            rollingDiceSoundPlayer = new WaveOut();
+            rollingDiceSoundPlayer.Init(rollingDiceSound);
         }
 
         // Play background music
@@ -37,6 +42,14 @@ namespace FinalProject
             mouseClickSoundPlayer.Stop();
             mouseClickSound.CurrentTime = new TimeSpan(0L);
             mouseClickSoundPlayer.Play();
+        }
+
+        // Play rolling dice sound
+        public static void RollingDiceSound()
+        {
+            rollingDiceSoundPlayer.Stop();
+            rollingDiceSound.CurrentTime = new TimeSpan(0L);
+            rollingDiceSoundPlayer.Play();
         }
     }
 }

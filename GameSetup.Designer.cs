@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameSetup));
             this.panel_CreatePlayer = new System.Windows.Forms.Panel();
+            this.statusBar = new FinalProject.Stats();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.characterImg = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,8 +39,8 @@
             this.tb_Name = new System.Windows.Forms.TextBox();
             this.lbl_CPName = new System.Windows.Forms.Label();
             this.btn_WelcomeCreatePlayer = new System.Windows.Forms.Button();
-            this.statusBar = new FinalProject.Stats();
             this.textHolder_Title = new FinalProject.Properties.TextHolder();
+            this.btn_About = new System.Windows.Forms.Button();
             this.panel_CreatePlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.characterImg)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +56,20 @@
             this.panel_CreatePlayer.Controls.Add(this.lbl_CPJob);
             this.panel_CreatePlayer.Controls.Add(this.tb_Name);
             this.panel_CreatePlayer.Controls.Add(this.lbl_CPName);
-            this.panel_CreatePlayer.Location = new System.Drawing.Point(76, 153);
+            this.panel_CreatePlayer.Location = new System.Drawing.Point(76, 160);
             this.panel_CreatePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.panel_CreatePlayer.Name = "panel_CreatePlayer";
             this.panel_CreatePlayer.Size = new System.Drawing.Size(941, 437);
             this.panel_CreatePlayer.TabIndex = 2;
             this.panel_CreatePlayer.Visible = false;
+            // 
+            // statusBar
+            // 
+            this.statusBar.BackColor = System.Drawing.Color.Transparent;
+            this.statusBar.Location = new System.Drawing.Point(-7, 161);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(498, 123);
+            this.statusBar.TabIndex = 10;
             // 
             // hScrollBar1
             // 
@@ -148,7 +157,7 @@
             this.btn_WelcomeCreatePlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_WelcomeCreatePlayer.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WelcomeCreatePlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_WelcomeCreatePlayer.Location = new System.Drawing.Point(344, 287);
+            this.btn_WelcomeCreatePlayer.Location = new System.Drawing.Point(320, 244);
             this.btn_WelcomeCreatePlayer.Margin = new System.Windows.Forms.Padding(4);
             this.btn_WelcomeCreatePlayer.Name = "btn_WelcomeCreatePlayer";
             this.btn_WelcomeCreatePlayer.Size = new System.Drawing.Size(414, 91);
@@ -157,23 +166,32 @@
             this.btn_WelcomeCreatePlayer.UseVisualStyleBackColor = false;
             this.btn_WelcomeCreatePlayer.Click += new System.EventHandler(this.btn_WelcomeCreatePlayer_Click);
             // 
-            // statusBar
-            // 
-            this.statusBar.BackColor = System.Drawing.Color.Transparent;
-            this.statusBar.Location = new System.Drawing.Point(-7, 161);
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(498, 123);
-            this.statusBar.TabIndex = 10;
-            // 
             // textHolder_Title
             // 
             this.textHolder_Title.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textHolder_Title.BackgroundImage")));
             this.textHolder_Title.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.textHolder_Title.Content = "Text Placeholder";
+            this.textHolder_Title.FontSize = 36;
             this.textHolder_Title.Location = new System.Drawing.Point(76, 52);
             this.textHolder_Title.Name = "textHolder_Title";
             this.textHolder_Title.Size = new System.Drawing.Size(941, 107);
             this.textHolder_Title.TabIndex = 6;
+            // 
+            // btn_About
+            // 
+            this.btn_About.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btn_About.BackgroundImage = global::FinalProject.Properties.Resources.button;
+            this.btn_About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_About.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_About.Location = new System.Drawing.Point(320, 374);
+            this.btn_About.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_About.Name = "btn_About";
+            this.btn_About.Size = new System.Drawing.Size(414, 91);
+            this.btn_About.TabIndex = 7;
+            this.btn_About.Text = "ABOUT";
+            this.btn_About.UseVisualStyleBackColor = false;
+            this.btn_About.Click += new System.EventHandler(this.btn_About_Click);
             // 
             // GameSetup
             // 
@@ -185,6 +203,8 @@
             this.Controls.Add(this.panel_CreatePlayer);
             this.Controls.Add(this.textHolder_Title);
             this.Controls.Add(this.btn_WelcomeCreatePlayer);
+            this.Controls.Add(this.btn_About);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "GameSetup";
@@ -209,6 +229,7 @@
         private System.Windows.Forms.PictureBox characterImg;
         private System.Windows.Forms.HScrollBar hScrollBar1;
         private Stats statusBar;
+        private System.Windows.Forms.Button btn_About;
     }
 }
 

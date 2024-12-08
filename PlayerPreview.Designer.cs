@@ -145,6 +145,7 @@
             this.textHolder_Title.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("textHolder_Title.BackgroundImage")));
             this.textHolder_Title.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.textHolder_Title.Content = "Text Placeholder";
+            this.textHolder_Title.FontSize = 36;
             this.textHolder_Title.Location = new System.Drawing.Point(76, 52);
             this.textHolder_Title.Name = "textHolder_Title";
             this.textHolder_Title.Size = new System.Drawing.Size(583, 107);
@@ -166,6 +167,7 @@
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.characterImg);
             this.Controls.Add(this.textHolder_Title);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayerPreview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DUNGEON GAME";

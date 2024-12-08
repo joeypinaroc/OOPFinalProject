@@ -15,6 +15,7 @@ namespace FinalProject
         private Player generatedPlayer; // Variable for player
         private Conflict currentConflict;
         private Dice dice = new Dice();
+        private string conflictResult;
 
         public static Dictionary<int, string> attributeDictionary = new Dictionary<int, string>()
         {
@@ -207,12 +208,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Strength - 10; //player with Str > 10 has Adv
                     if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Strength += choiceList[0].DisadvantageBonus; //if player with Strength Adv fails, reduce their Strength attribute   
                     }
@@ -222,13 +223,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Strength; //player with Str < 10 has Disadv
                     if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Strength += choiceList[0].AdvantageBonus; //if player without Strength Adv succeeds, add their Strength attribute
                     }
                     else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -236,12 +237,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -253,12 +254,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Charisma - 10; //player with Cha > 10 has Adv
                     if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Charisma += choiceList[0].DisadvantageBonus; //if player with Charisma Adv fails, reduce their Charisma attribute   
                     }
@@ -268,13 +269,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Charisma; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Charisma += choiceList[0].AdvantageBonus; //if player without Charisma Adv succeeds, add their Charisma attribute
                     }
                     else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -282,12 +283,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -299,12 +300,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Intelligence - 10; //player with Int > 10 has Adv
                     if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Intelligence += choiceList[0].DisadvantageBonus; //if player with Intelligence Adv fails, reduce their Intelligence attribute   
                     }
@@ -314,13 +315,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Intelligence; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Intelligence += choiceList[0].AdvantageBonus; //if player without Intelligence Adv succeeds, add their Intelligence attribute
                     }
                     else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -328,21 +329,23 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[0].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
             }
             else if (choiceList[0].ChoiceCheck == null) //if ChoiceCheck is null, auto-fail the conflict
             {
-                MessageBox.Show("You selected the Surrender option!");
+                conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false;
             }
+            Dice_UI Dice_UI = new Dice_UI(conflictResult);
+            Dice_UI.ShowDialog();
             SetupAttriButes();
             UpdateConflict(currentConflict);
             UpdateChoices();
@@ -359,12 +362,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Strength - 10; //player with Str > 10 has Adv
                     if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Strength += choiceList[1].DisadvantageBonus; //if player with Strength Adv fails, reduce their Strength attribute   
                     }
@@ -374,13 +377,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Strength; //player with Str < 10 has Disadv
                     if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Strength += choiceList[1].AdvantageBonus; //if player without Strength Adv succeeds, add their Strength attribute
                     }
                     else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -388,12 +391,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -405,12 +408,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Charisma - 10; //player with Cha > 10 has Adv
                     if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Charisma += choiceList[1].DisadvantageBonus; //if player with Charisma Adv fails, reduce their Charisma attribute   
                     }
@@ -420,13 +423,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Charisma; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Charisma += choiceList[1].AdvantageBonus; //if player without Charisma Adv succeeds, add their Charisma attribute
                     }
                     else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -434,12 +437,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -451,12 +454,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Intelligence - 10; //player with Int > 10 has Adv
                     if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Intelligence += choiceList[1].DisadvantageBonus; //if player with Intelligence Adv fails, reduce their Intelligence attribute   
                     }
@@ -466,13 +469,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Intelligence; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Intelligence += choiceList[1].AdvantageBonus; //if player without Intelligence Adv succeeds, add their Intelligence attribute
                     }
                     else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -480,21 +483,23 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[1].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
             }
             else if (choiceList[1].ChoiceCheck == null) //if ChoiceCheck is null, auto-fail the conflict
             {
-                MessageBox.Show("You selected the Surrender option!");
+                conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false;
             }
+            Dice_UI Dice_UI = new Dice_UI(conflictResult);
+            Dice_UI.ShowDialog();
             SetupAttriButes();
             UpdateConflict(currentConflict);
             UpdateChoices();
@@ -511,12 +516,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Strength - 10; //player with Str > 10 has Adv
                     if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Strength += choiceList[2].DisadvantageBonus; //if player with Strength Adv fails, reduce their Strength attribute   
                     }
@@ -526,13 +531,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Strength; //player with Str < 10 has Disadv
                     if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Strength += choiceList[2].AdvantageBonus; //if player without Strength Adv succeeds, add their Strength attribute
                     }
                     else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -540,12 +545,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -557,12 +562,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Charisma - 10; //player with Cha > 10 has Adv
                     if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Charisma += choiceList[2].DisadvantageBonus; //if player with Charisma Adv fails, reduce their Charisma attribute   
                     }
@@ -572,13 +577,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Charisma; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Charisma += choiceList[2].AdvantageBonus; //if player without Charisma Adv succeeds, add their Charisma attribute
                     }
                     else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -586,12 +591,12 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -603,12 +608,12 @@ namespace FinalProject
                     int adv = generatedPlayer.Intelligence - 10; //player with Int > 10 has Adv
                     if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + adv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;
                         generatedPlayer.Intelligence += choiceList[2].DisadvantageBonus; //if player with Intelligence Adv fails, reduce their Intelligence attribute   
                     }
@@ -618,13 +623,13 @@ namespace FinalProject
                     int disadv = 10 - generatedPlayer.Intelligence; //player with Cha < 10 has Disadv
                     if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Success!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true;
                         generatedPlayer.Intelligence += choiceList[2].AdvantageBonus; //if player without Intelligence Adv succeeds, add their Intelligence attribute
                     }
                     else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + (roll + disadv) + ". Failure!");
+                        conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
@@ -632,21 +637,23 @@ namespace FinalProject
                 {
                     if (roll >= choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Success!");
+                        conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true;
                     }
                     else if (roll < choiceList[2].ChoiceCheckValue)
                     {
-                        MessageBox.Show("You rolled " + roll + ". Failure!");
+                        conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false;
                     }
                 }
             }
             else if (choiceList[2].ChoiceCheck == null) //if ChoiceCheck is null, auto-fail the conflict
             {
-                MessageBox.Show("You selected the Surrender option!");
+                conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false;
             }
+            Dice_UI Dice_UI = new Dice_UI(conflictResult);
+            Dice_UI.ShowDialog();
             SetupAttriButes();
             UpdateConflict(currentConflict);
             UpdateChoices();
