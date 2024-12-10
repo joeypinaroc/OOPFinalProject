@@ -14,7 +14,7 @@ namespace FinalProject
     }
     public class Choice
     {
-        public int ConflictID { get; set; } 
+        public int ConflictID { get; set; }
         public int ChoiceID { get; set; }
         public string ChoiceText { get; set; }
         public string ChoiceCheck { get; set; }
