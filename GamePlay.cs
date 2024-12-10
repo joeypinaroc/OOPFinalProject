@@ -172,22 +172,22 @@ namespace FinalProject
 
         private void SelectEnding(Conflict penConflict)
         {
-            if (penConflict.ConflictID == 3)
+            if (penConflict.ConflictID == 4)
             {
                 if (penConflict.Outcome == true) InitiateEnding(endingList[0]);
                 else InitiateEnding(endingList[1]);
             }
-            else if (penConflict.ConflictID == 4)
+            else if (penConflict.ConflictID == 5)
             {
                 if (penConflict.Outcome == true) InitiateEnding(endingList[2]);
                 else InitiateEnding(endingList[3]);
             }
-            else if (penConflict.ConflictID == 5)
+            else if (penConflict.ConflictID == 6)
             {
                 if (penConflict.Outcome == true) InitiateEnding(endingList[4]);
                 else InitiateEnding(endingList[5]);
             }
-            else if (penConflict.ConflictID == 6)
+            else if (penConflict.ConflictID == 7)
             {
                 if (penConflict.Outcome == true) InitiateEnding(endingList[6]);
                 else InitiateEnding(endingList[7]);
