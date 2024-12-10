@@ -28,91 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar_Str = new System.Windows.Forms.ProgressBar();
+            this.lbl_Str = new System.Windows.Forms.Label();
+            this.lbl_Int = new System.Windows.Forms.Label();
+            this.lbl_Chr = new System.Windows.Forms.Label();
+            this.progressBar_Int = new System.Windows.Forms.ProgressBar();
+            this.progressBar_Chr = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // progressBar_Str
             // 
-            this.progressBar1.BackColor = System.Drawing.Color.White;
-            this.progressBar1.Location = new System.Drawing.Point(170, 12);
-            this.progressBar1.Maximum = 20;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(295, 28);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 9;
-            this.progressBar1.Value = 10;
+            this.progressBar_Str.BackColor = System.Drawing.Color.White;
+            this.progressBar_Str.ForeColor = System.Drawing.Color.Red;
+            this.progressBar_Str.Location = new System.Drawing.Point(170, 12);
+            this.progressBar_Str.Maximum = 20;
+            this.progressBar_Str.Name = "progressBar_Str";
+            this.progressBar_Str.Size = new System.Drawing.Size(295, 28);
+            this.progressBar_Str.Step = 1;
+            this.progressBar_Str.TabIndex = 9;
+            this.progressBar_Str.Value = 10;
             // 
-            // label1
+            // lbl_Str
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(46, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 28);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "STRENGTH:";
+            this.lbl_Str.AutoSize = true;
+            this.lbl_Str.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Str.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbl_Str.Location = new System.Drawing.Point(46, 11);
+            this.lbl_Str.Name = "lbl_Str";
+            this.lbl_Str.Size = new System.Drawing.Size(121, 28);
+            this.lbl_Str.TabIndex = 10;
+            this.lbl_Str.Text = "STRENGTH:";
             // 
-            // label2
+            // lbl_Int
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(15, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 28);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "INTELLIGENCE:";
+            this.lbl_Int.AutoSize = true;
+            this.lbl_Int.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Int.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbl_Int.Location = new System.Drawing.Point(15, 46);
+            this.lbl_Int.Name = "lbl_Int";
+            this.lbl_Int.Size = new System.Drawing.Size(152, 28);
+            this.lbl_Int.TabIndex = 11;
+            this.lbl_Int.Text = "INTELLIGENCE:";
             // 
-            // label3
+            // lbl_Chr
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(46, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 28);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "CHARISMA:";
+            this.lbl_Chr.AutoSize = true;
+            this.lbl_Chr.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Chr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lbl_Chr.Location = new System.Drawing.Point(46, 79);
+            this.lbl_Chr.Name = "lbl_Chr";
+            this.lbl_Chr.Size = new System.Drawing.Size(121, 28);
+            this.lbl_Chr.TabIndex = 12;
+            this.lbl_Chr.Text = "CHARISMA:";
             // 
-            // progressBar2
+            // progressBar_Int
             // 
-            this.progressBar2.BackColor = System.Drawing.Color.White;
-            this.progressBar2.Location = new System.Drawing.Point(170, 46);
-            this.progressBar2.Maximum = 20;
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(295, 28);
-            this.progressBar2.Step = 1;
-            this.progressBar2.TabIndex = 13;
-            this.progressBar2.Value = 10;
+            this.progressBar_Int.BackColor = System.Drawing.Color.White;
+            this.progressBar_Int.Location = new System.Drawing.Point(170, 46);
+            this.progressBar_Int.Maximum = 20;
+            this.progressBar_Int.Name = "progressBar_Int";
+            this.progressBar_Int.Size = new System.Drawing.Size(295, 28);
+            this.progressBar_Int.Step = 1;
+            this.progressBar_Int.TabIndex = 13;
+            this.progressBar_Int.Value = 10;
             // 
-            // progressBar3
+            // progressBar_Chr
             // 
-            this.progressBar3.BackColor = System.Drawing.Color.White;
-            this.progressBar3.Location = new System.Drawing.Point(170, 80);
-            this.progressBar3.Maximum = 20;
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(295, 28);
-            this.progressBar3.Step = 1;
-            this.progressBar3.TabIndex = 14;
-            this.progressBar3.Value = 10;
+            this.progressBar_Chr.BackColor = System.Drawing.Color.White;
+            this.progressBar_Chr.ForeColor = System.Drawing.Color.Lime;
+            this.progressBar_Chr.Location = new System.Drawing.Point(170, 80);
+            this.progressBar_Chr.Maximum = 20;
+            this.progressBar_Chr.Name = "progressBar_Chr";
+            this.progressBar_Chr.Size = new System.Drawing.Size(295, 28);
+            this.progressBar_Chr.Step = 1;
+            this.progressBar_Chr.TabIndex = 14;
+            this.progressBar_Chr.Value = 10;
             // 
             // Stats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.progressBar3);
-            this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar_Chr);
+            this.Controls.Add(this.progressBar_Int);
+            this.Controls.Add(this.lbl_Chr);
+            this.Controls.Add(this.lbl_Int);
+            this.Controls.Add(this.lbl_Str);
+            this.Controls.Add(this.progressBar_Str);
             this.Name = "Stats";
             this.Size = new System.Drawing.Size(498, 123);
             this.ResumeLayout(false);
@@ -122,11 +124,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.ProgressBar progressBar_Str;
+        private System.Windows.Forms.Label lbl_Str;
+        private System.Windows.Forms.Label lbl_Int;
+        private System.Windows.Forms.Label lbl_Chr;
+        private System.Windows.Forms.ProgressBar progressBar_Int;
+        private System.Windows.Forms.ProgressBar progressBar_Chr;
     }
 }

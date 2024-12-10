@@ -43,6 +43,7 @@
             this.TextContent.Size = new System.Drawing.Size(481, 81);
             this.TextContent.TabIndex = 1;
             this.TextContent.Text = "Text Placeholder";
+            this.TextContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TextHolder
             // 

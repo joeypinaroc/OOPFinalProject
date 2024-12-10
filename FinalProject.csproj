@@ -76,8 +76,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conflict.cs" />
     <Compile Include="Dice.cs" />
+    <Compile Include="Dice_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dice_UI.Designer.cs">
+      <DependentUpon>Dice_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamePlay.Designer.cs">
+      <DependentUpon>GamePlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameResult.Designer.cs">
+      <DependentUpon>GameResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerPreview.Designer.cs">
+      <DependentUpon>PlayerPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\TextHolder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,22 +122,37 @@
     <Compile Include="Stats.Designer.cs">
       <DependentUpon>Stats.cs</DependentUpon>
     </Compile>
-    <Compile Include="WelcomePage.cs">
+    <Compile Include="GameSetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WelcomePage.Designer.cs">
-      <DependentUpon>WelcomePage.cs</DependentUpon>
+    <Compile Include="GameSetup.Designer.cs">
+      <DependentUpon>GameSetup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dice_UI.resx">
+      <DependentUpon>Dice_UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePlay.resx">
+      <DependentUpon>GamePlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameResult.resx">
+      <DependentUpon>GameResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerPreview.resx">
+      <DependentUpon>PlayerPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\TextHolder.resx">
       <DependentUpon>TextHolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stats.resx">
       <DependentUpon>Stats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WelcomePage.resx">
-      <DependentUpon>WelcomePage.cs</DependentUpon>
+    <EmbeddedResource Include="GameSetup.resx">
+      <DependentUpon>GameSetup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,9 +188,6 @@
     <None Include="Resources\background-music.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Textholder1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button.png" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +201,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-bard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-farmer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar-scholar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rollingdice.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rollingdice-sound.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

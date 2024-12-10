@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class WelcomePage : Form
+    public partial class MainWindow : Form
     {
 
         private Player generatedPlayer;
@@ -29,9 +29,13 @@ namespace FinalProject
             { 2, "Intelligence" }
         };
         
-        public WelcomePage()
+        public MainWindow()
         {
             InitializeComponent();
+            foreach (TabPage page in tabControl.TabPages)
+            {
+                page.BackColor = Color.Transparent;
+            }
             SoundEffect.BackgroundMusic();
             textHolder1.Content = "WELCOME TO DUNGEON GAME";
             foreach (Job job in joblist) // combobox has DropDownStyle = DropDownList
@@ -82,6 +86,7 @@ namespace FinalProject
 
         private void cb_Job_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SoundEffect.MouseClickSound();
             if (cb_Job.SelectedIndex == 0)
             {
                 characterImg.Image = Properties.Resources.farmer;
