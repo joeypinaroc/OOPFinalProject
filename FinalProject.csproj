@@ -7,7 +7,7 @@
     <ProjectGuid>{ADA51076-5D53-432B-9AF9-CC37783C6059}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FinalProject</RootNamespace>
-    <AssemblyName>FinalProject</AssemblyName>
+    <AssemblyName>Dungeon Game</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -109,12 +109,6 @@
     <Compile Include="PlayerPreview.Designer.cs">
       <DependentUpon>PlayerPreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\TextHolder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Properties\TextHolder.Designer.cs">
-      <DependentUpon>TextHolder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sound Effect.cs" />
     <Compile Include="Stats.cs">
       <SubType>UserControl</SubType>
@@ -130,6 +124,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextHolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextHolder.designer.cs">
+      <DependentUpon>TextHolder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerPreview.resx">
       <DependentUpon>PlayerPreview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\TextHolder.resx">
-      <DependentUpon>TextHolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stats.resx">
       <DependentUpon>Stats.cs</DependentUpon>
@@ -164,6 +161,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TextHolder.resx">
+      <DependentUpon>TextHolder.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

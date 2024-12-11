@@ -15,7 +15,6 @@ namespace FinalProject
         public Stats()
         {
             InitializeComponent();
-
         }
 
         public class CustomProgressBar : ProgressBar
@@ -44,7 +43,7 @@ namespace FinalProject
             }
         }
 
-        // Property to modify
+        // Property to modify attribute display
         public void  SetStat(int strength, int intelligence, int charisma)
         {
             progressBar_Str.Value = strength;
