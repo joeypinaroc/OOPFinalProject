@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Media;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +15,8 @@ namespace FinalProject
     {
 
         private Player generatedPlayer;
+        private Conflict currentConflict;
+        private Dice dice = new Dice();
         public static List<Job> joblist = new List<Job>()
         {
             new Job{Id = 1, JobName = "Farmer"},
@@ -60,8 +62,6 @@ namespace FinalProject
             string chosenJobName = cb_Job.SelectedItem.ToString();
             Job chosenJob = joblist.Find(job => job.JobName == chosenJobName);
 
-            //Player player1 = new Player(playerName, chosenJob);
-
             PlayerGenerator p = new PlayerGenerator();
             p.PlayerGenerated += OnPlayerGenerated;
 
@@ -70,9 +70,6 @@ namespace FinalProject
         private void OnPlayerGenerated(object sender, PlayerGeneratedEventArgs e)
         {
             generatedPlayer = e.CreatedPlayer;
-
-            MessageBox.Show("Player created: " + generatedPlayer.Name + " with job: " + generatedPlayer.Job.JobName + "\n" +
-               "You have the following attributes: " + "\nStrength: " + generatedPlayer.Strength + "\nCharisma: " + generatedPlayer.Charisma + "\nIntelligence: " + generatedPlayer.Intelligence);
 
             ClearForm();
         }

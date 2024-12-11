@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
+    // Show Game setup and handle logic
     public partial class GameSetup : Form
     {
 
@@ -101,6 +102,7 @@ namespace FinalProject
         {
             // Play selection change sound eff
             SoundEffect.MouseClickSound();
+            // Create and show instance of About dialog
             About About = new About();
             About.ShowDialog();
         }

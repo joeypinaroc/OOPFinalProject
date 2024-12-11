@@ -12,6 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FinalProject
 {
+    // Show Player preview and handle logic
     public partial class PlayerPreview : Form
     {
         private Player player; // Variable for player
@@ -67,9 +68,10 @@ namespace FinalProject
             this.Hide(); // Close this popup
         }
 
+        // Method to handle closing of Player Preview
         private void PlayerPreview_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); // Exit the application
         }
     }
 }

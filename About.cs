@@ -16,6 +16,7 @@ namespace FinalProject
         public About()
         {
             InitializeComponent();
+            // Project details
             lbl_About.Text = "SODV2101: FINAL PROJECT\n" +
                 "RAPID APPLICATION DEVELOPMENT\n\n" +
                 "BY:\n\tGLENN PEREZ\n\tJOEY PINAROC\n\n" +
@@ -25,6 +26,7 @@ namespace FinalProject
         // Event to close the About popup
         private void btn_OK_Click(object sender, EventArgs e)
         {
+            // Play mouse click effect and close popup
             SoundEffect.MouseClickSound();
             this.Close();
         }
