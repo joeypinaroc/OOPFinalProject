@@ -112,7 +112,6 @@
             this.cb_Job.Name = "cb_Job";
             this.cb_Job.Size = new System.Drawing.Size(270, 49);
             this.cb_Job.TabIndex = 3;
-            this.cb_Job.SelectedIndexChanged += new System.EventHandler(this.cb_Job_SelectedIndexChanged);
             // 
             // lbl_CPJob
             // 
