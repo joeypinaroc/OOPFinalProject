@@ -16,6 +16,7 @@ namespace FinalProject
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Run GameSetup form first
             Application.Run(new GameSetup());
         }
     }
