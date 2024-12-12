@@ -16,6 +16,7 @@ namespace FinalProject.Properties
         public TextHolder()
         {
             InitializeComponent();
+            //TextContent.AutoSize = true;
         }
 
         // Property to access or modify the content dynamically

@@ -32,65 +32,65 @@ namespace FinalProject
         // List of conflicts (There will be 7 available conflicts in total)
         public static List<Conflict> conflictList = new List<Conflict>()
         {
-            new Conflict { ConflictID = 1, Text = "Your first conflict! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 2, Text = "Conflict number 2! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 3, Text = "Conflict number 3! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 4, Text = "Conflict number 4! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 5, Text = "Conflict number 5! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 6, Text = "Conflict number 6! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 7, Text = "Conflict number 7! Decide on a choice by pressing a button below.", Outcome = false},
+            new Conflict { ConflictID = 1, Text = "As you approach the spooky mountain, you see a rusty old gate leading into darkness. An old dungeon, you think to yourself. You look around the gate and see what looks to be a lever.", Outcome = false},
+            new Conflict { ConflictID = 2, Text = "The gate creaks open and you venture on. In the darkness, a shadowy presence envelopes you, and you hear a ghostly voice speak in an ancient language.", Outcome = false},
+            new Conflict { ConflictID = 3, Text = "The gate somehow swings open! You peer into the darkness and sense a pair of void eyes staring at you. The sound of heavy, boney footsteps grow louder as a skeletal dog appears out of the void!", Outcome = false},
+            new Conflict { ConflictID = 4, Text = "The now friendly shadow creature leads you through the darkness, and to another (seemingly) friendly entity. A skeletal dog! The skeletal dog approaches you, 'sniffing' the air around you.", Outcome = false},
+            new Conflict { ConflictID = 5, Text = "The creature wraps its shadowy limbs around you, and violently drags you further into the dark. The creature drops you on a sheet of ice, on the far end of which is your cat resting on solid ground.", Outcome = false},
+            new Conflict { ConflictID = 6, Text = "The skeletal dog wags its bony tail and barks at you to follow it into the dark. You both reach the end of the dungeon and the dog points to your cat resting on top of a pedestal! At the foot of the pedestal though, lies a massive ancient bear, sleeping on its stomach.", Outcome = false},
+            new Conflict { ConflictID = 7, Text = "The dog lets out an ear-piercing howl and disappears into the darkness. You suddenly hear heavier footsteps approaching. A large ancient bear, with eyes burning in the dark. It snarls at you.", Outcome = false},
         };
 
         // List of choices for each conflict (Each conflict will have 3 choices)
         public static List<Choice> choiceList = new List<Choice>()
         {
             // Choices for Conflict 1
-            new Choice { ConflictID = 1, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 1, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 1, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]", ChoiceCheck = null},
+            new Choice { ConflictID = 1, ChoiceID = 1, ChoiceText = "Pull on the lever with all your might. [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 1, ChoiceID = 2, ChoiceText = "Create a makeshift leverage extender and pull the lever. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 1, ChoiceID = 3, ChoiceText = "Scream into the darkness! [SUR]", ChoiceCheck = null},
 
             // Choices for Conflict 2
-            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 2, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Flex your musculature and appear large and strong before the creature! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 2, ChoiceText = "Act weak and hope that the shadow creature takes pity on you. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "Recall your knowledge of ancient languages and ask the creature to let you pass. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
 
             // Choices for Conflict 3
-            new Choice { ConflictID = 3, ChoiceID = 1, ChoiceText = "Choice 1 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 3, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 3, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]", ChoiceCheck = null },
+            new Choice { ConflictID = 3, ChoiceID = 1, ChoiceText = "Try to pet the skeletal dog. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 3, ChoiceID = 2, ChoiceText = "Pick up a human femur and offer it to the dog. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 3, ChoiceID = 3, ChoiceText = "Stay still, and hope the dog leaves. [SUR]", ChoiceCheck = null },
 
             // Choices for Conflict 4
-            new Choice { ConflictID = 4, ChoiceID = 1, ChoiceText = "Choice 1 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 14, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 4, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 4, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]" , ChoiceCheck = null },
+            new Choice { ConflictID = 4, ChoiceID = 1, ChoiceText = "Pet and befriend the skeletal dog. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 14, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 4, ChoiceID = 2, ChoiceText = "Crouch to the dog's level and allow it to 'sniff' you. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 4, ChoiceID = 3, ChoiceText = "Stare into the void of the dog's eyes. [SUR]" , ChoiceCheck = null },
 
             // Choices for Conflict 5
-            new Choice { ConflictID = 5, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 5, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 5, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 5, ChoiceID = 1, ChoiceText = "Sprint across the ice and leap towards your cat! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 5, ChoiceID = 2, ChoiceText = "Slowly walk across the ice while maintaining your balance. [SUR]", ChoiceCheck = null},
+            new Choice { ConflictID = 5, ChoiceID = 3, ChoiceText = "Penguin slide across the ice to get to solid ground! [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
 
             // Choices for Conflict 6
-            new Choice { ConflictID = 6, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 6, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 6, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 6, ChoiceID = 1, ChoiceText = "Use all your leg strength to jump to the top of the pedestal. [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 6, ChoiceID = 2, ChoiceText = "Use nonverbal signals to convince your cat to jump down the pedestal! [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 6, ChoiceID = 3, ChoiceText = "Pick your steps carefully and sneak past the sleeping bear. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
 
             // Choices for Conflict 7
-            new Choice { ConflictID = 7, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 7, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 7, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 7, ChoiceID = 1, ChoiceText = "Muster all your strength and punch the bear! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 7, ChoiceID = 2, ChoiceText = "Try to befriend the bear. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 7, ChoiceID = 3, ChoiceText = "Stand tall and try to scare the bear. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
         };
 
         // List of endings (There will be 8 available endings in total)
         public static List<Ending> endingList = new List<Ending>()
         {
-            new Ending { EndingID = 1, EndingText = "You get Ending 1!"},
-            new Ending { EndingID = 2, EndingText = "You get Ending 2!"},
-            new Ending { EndingID = 3, EndingText = "You get Ending 3!"},
-            new Ending { EndingID = 4, EndingText = "You get Ending 4!"},
-            new Ending { EndingID = 5, EndingText = "You get Ending 5!"},
-            new Ending { EndingID = 6, EndingText = "You get Ending 6!"},
-            new Ending { EndingID = 7, EndingText = "You get Ending 7!"},
-            new Ending { EndingID = 8, EndingText = "You get Ending 8!"},
+            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your cat is! You grab your cat tight and get portaled back to the dungeon entrance!"},
+            new Ending { EndingID = 2, EndingText = "The skeletal dog emits a ghastly howl and runs back into the darkness! You chase after it, only to find it hunched over a small bloody corpse. Your cat! It then turns to you..."},
+            new Ending { EndingID = 3, EndingText = "You reach solid ground and reunite with your cat. They point you to a secret ladder which leads to the outside world!"},
+            new Ending { EndingID = 4, EndingText = "You hear the ice break and you sink to the cold depths below."},
+            new Ending { EndingID = 5, EndingText = "You successfully reunite with your cat! Touching them triggers a portal which takes you both back to the dungeon entrance!"},
+            new Ending { EndingID = 6, EndingText = "The ancient bear opens its burning eyes, stands up, and swings its claw at you, killing you with one swipe."},
+            new Ending { EndingID = 7, EndingText = "The bear winces, and then leaves you alone. You run further into the darkness until you find your cat sleeping in a corner. You both venture back across the dungeon to safety."},
+            new Ending { EndingID = 8, EndingText = "The bear pauses, and in a split second bites your head clean off!"},
         };
         
         // Constructor for GamePlay class with player and GameSetup form as input
