@@ -25,24 +25,26 @@ namespace FinalProject
             this.GameSetupForm = GameSetupForm; // Store the reference
             player = createdPlayer;
             // Update Name, Job and stats based on player selection
-            textHolder_Title.Content = "PLAYER PREVIEW";
-            lbl_Name_Value.Text = player.Name;
-            lbl_Job_Value.Text = player.Job.JobName.ToUpper();
+            textHolder_Title.Content = player.Job.JobName.ToUpper();
             statusBar.SetStat(player.Strength, player.Intelligence, player.Charisma);
+            textHolder_Desc.FontSize = 14;
             if (player.Job.JobName == "Farmer")
             {
-                // Display farmer character and update stats
+                // Display farmer character, description and update stats
                 characterImg.Image = Properties.Resources.farmer;
+                textHolder_Desc.Content = "'From the earth, we thrive.' \nPossess a deep connection with nature \nand a wealth of practical knowledge";
             }
             else if (player.Job.JobName == "Bard")
             {
-                // Display bard character and update stats
+                // Display bard character, description and update stats
                 characterImg.Image = Properties.Resources.bard;
+                textHolder_Desc.Content = "'Every tale has a song.'\nSharing stories, songs and poems. \nPreserving the culture and history of the people.";
             }
             else
             {
-                // Display scholar character and update stats
+                // Display scholar character, description and update stats
                 characterImg.Image = Properties.Resources.scholar;
+                textHolder_Desc.Content = "'Knowledge is the key to all doors.' \nDelving into ancient texts and history.\nValuable source of information and wisdom.";
             }
         }
 
