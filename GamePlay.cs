@@ -50,9 +50,9 @@ namespace FinalProject
             new Choice { ConflictID = 1, ChoiceID = 3, ChoiceText = "Scream into the darkness! [SUR]", ChoiceCheck = null},
 
             // Choices for Conflict 2
-            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Flex your musculature and appear large and strong before the creature! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Flex and appear large and strong before the shadow! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
             new Choice { ConflictID = 2, ChoiceID = 2, ChoiceText = "Act weak and hope that the shadow creature takes pity on you. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "Recall your knowledge of ancient languages and ask the creature to let you pass. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "You recognize the ancient language, ask the shadow to let you pass. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
 
             // Choices for Conflict 3
             new Choice { ConflictID = 3, ChoiceID = 1, ChoiceText = "Try to pet the skeletal dog. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
@@ -149,7 +149,8 @@ namespace FinalProject
             currentConflict = new Conflict();
             currentConflict = conflictList[0]; // Get 1st conflict
             lbl_ConflictText.Content = currentConflict.Text; // Update text
-            lbl_ConflictText.FontSize = 18; // Update font size
+            lbl_ConflictText.WrapWidth = 800;
+            lbl_ConflictText.FontSize = 14; // Update font size
         }
 
         // Method to Update choices

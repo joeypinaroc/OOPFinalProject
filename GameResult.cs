@@ -27,7 +27,8 @@ namespace FinalProject
             this.generatedPlayer = player; // Store player object
             // Update result text and size
             lbl_GameResult.Content = resultText;
-            lbl_GameResult.FontSize = 24;
+            lbl_GameResult.FontSize = 16;
+            lbl_GameResult.WrapWidth = 460; // Set TextHolder width
             // Evaluate player job
             if (player.Job.JobName == "Farmer")
             {

@@ -37,24 +37,24 @@
             this.TextContent.BackColor = System.Drawing.Color.Transparent;
             this.TextContent.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TextContent.Location = new System.Drawing.Point(29, 12);
-            this.TextContent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TextContent.Location = new System.Drawing.Point(22, 10);
             this.TextContent.Name = "TextContent";
-            this.TextContent.Size = new System.Drawing.Size(481, 81);
+            this.TextContent.Size = new System.Drawing.Size(387, 65);
             this.TextContent.TabIndex = 1;
             this.TextContent.Text = "Text Placeholder";
             this.TextContent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TextHolder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FinalProject.Properties.Resources.Textholder;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.TextContent);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TextHolder";
-            this.Size = new System.Drawing.Size(958, 107);
+            this.Size = new System.Drawing.Size(718, 87);
             this.ResumeLayout(false);
             this.PerformLayout();
 
