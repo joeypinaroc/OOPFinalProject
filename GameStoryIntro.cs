@@ -23,6 +23,8 @@ namespace FinalProject
             lbl_Intro.WrapWidth = 600;
             lbl_Intro.FontSize = 14;
 
+            // Setup Mr. Mustard
+            // reference for image: https://www.pinterest.com/pin/461056080605474646/
             lbl_MrMustard.Content = "Mr. Mustard";
             lbl_MrMustard.WrapWidth = 200;
             lbl_MrMustard.FontSize = 10;

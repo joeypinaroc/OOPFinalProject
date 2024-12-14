@@ -82,7 +82,7 @@
             this.lbl_MrMustard.Location = new System.Drawing.Point(93, 204);
             this.lbl_MrMustard.Margin = new System.Windows.Forms.Padding(2);
             this.lbl_MrMustard.Name = "lbl_MrMustard";
-            this.lbl_MrMustard.Size = new System.Drawing.Size(133, 27);
+            this.lbl_MrMustard.Size = new System.Drawing.Size(133, 32);
             this.lbl_MrMustard.TabIndex = 3;
             this.lbl_MrMustard.WrapWidth = 0;
             // 

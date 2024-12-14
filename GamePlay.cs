@@ -84,13 +84,13 @@ namespace FinalProject
         // List of endings (There will be 8 available endings in total)
         public static List<Ending> endingList = new List<Ending>()
         {
-            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your cat is! You grab your cat tight and (as if by magic) get portaled back to the dungeon entrance!"},
-            new Ending { EndingID = 2, EndingText = "The skeletal dog emits a ghastly howl and runs back into the darkness! You chase after it, only to find it hunched over a small bloody corpse. Your cat! It then turns to you..."},
-            new Ending { EndingID = 3, EndingText = "You reach solid ground and reunite with your cat. They point you to a secret ladder which leads to the outside world!"},
+            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your Mr. Mustard is! You grab him tight and (as if by magic) get portaled back to the dungeon entrance!"},
+            new Ending { EndingID = 2, EndingText = "The skeletal dog emits a ghastly howl and runs back into the darkness! You chase after it, only to find it hunched over a small bloody corpse. Mr. Mustard! It then turns to you..."},
+            new Ending { EndingID = 3, EndingText = "You reach solid ground and reunite with Mr. Mustard. He points you to a secret ladder which leads to the outside world!"},
             new Ending { EndingID = 4, EndingText = "You hear the ice break and you sink to the cold depths below."},
-            new Ending { EndingID = 5, EndingText = "You successfully reunite with your cat! Touching them triggers a portal which takes you both back to the dungeon entrance!"},
+            new Ending { EndingID = 5, EndingText = "You successfully reunite with Mr. Mustard! Touching him triggers a portal which takes you both back to the dungeon entrance!"},
             new Ending { EndingID = 6, EndingText = "The ancient bear opens its burning eyes, stands up, and swings its claw at you, killing you with one swipe."},
-            new Ending { EndingID = 7, EndingText = "The bear winces, and then leaves you alone. You run further into the darkness until you find your cat sleeping in a corner. You both venture back across the dungeon to safety."},
+            new Ending { EndingID = 7, EndingText = "The bear winces, and then leaves you alone. You run further into the darkness until you find Mr. Mustard sleeping in a corner. You both venture back across the dungeon to safety."},
             new Ending { EndingID = 8, EndingText = "The bear pauses, and in a split second bites your head clean off!"},
         };
         
