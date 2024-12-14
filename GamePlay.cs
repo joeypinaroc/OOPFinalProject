@@ -84,7 +84,7 @@ namespace FinalProject
         // List of endings (There will be 8 available endings in total)
         public static List<Ending> endingList = new List<Ending>()
         {
-            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your cat is! You grab your cat tight and get portaled back to the dungeon entrance!"},
+            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your cat is! You grab your cat tight and (as if by magic) get portaled back to the dungeon entrance!"},
             new Ending { EndingID = 2, EndingText = "The skeletal dog emits a ghastly howl and runs back into the darkness! You chase after it, only to find it hunched over a small bloody corpse. Your cat! It then turns to you..."},
             new Ending { EndingID = 3, EndingText = "You reach solid ground and reunite with your cat. They point you to a secret ladder which leads to the outside world!"},
             new Ending { EndingID = 4, EndingText = "You hear the ice break and you sink to the cold depths below."},
@@ -119,6 +119,10 @@ namespace FinalProject
             SetupAttriButes(); // Setup player attributes
 
             SetupChoices(); // Setup player choices
+
+            // Setup Story Intro box
+            GameStoryIntro gameStoryIntro = new GameStoryIntro();
+            gameStoryIntro.ShowDialog();
         }
 
         // Method to setup player attributes
