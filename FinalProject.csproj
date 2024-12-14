@@ -90,6 +90,12 @@
     <Compile Include="Dice_UI.Designer.cs">
       <DependentUpon>Dice_UI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameStoryIntro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameStoryIntro.Designer.cs">
+      <DependentUpon>GameStoryIntro.cs</DependentUpon>
+    </Compile>
     <Compile Include="GamePlay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameResult.resx">
       <DependentUpon>GameResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameStoryIntro.resx">
+      <DependentUpon>GameStoryIntro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerPreview.resx">
       <DependentUpon>PlayerPreview.cs</DependentUpon>
@@ -238,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rollingdice-sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MrMustard.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

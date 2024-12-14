@@ -17,6 +17,7 @@ namespace FinalProject
         // Define gameplay variables
         private Player generatedPlayer; // Variable for player
         private Conflict currentConflict; // Variable for conflict
+        private List<Choice> currentChoiceList = new List<Choice>(); // Variable List<Choice> for current choices
         private Dice dice = new Dice(); // Variable for dice
         private string conflictResult; // Variable for conflict result
         private GameSetup GameSetupForm; // Reference to GameSetup form
@@ -32,65 +33,65 @@ namespace FinalProject
         // List of conflicts (There will be 7 available conflicts in total)
         public static List<Conflict> conflictList = new List<Conflict>()
         {
-            new Conflict { ConflictID = 1, Text = "Your first conflict! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 2, Text = "Conflict number 2! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 3, Text = "Conflict number 3! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 4, Text = "Conflict number 4! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 5, Text = "Conflict number 5! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 6, Text = "Conflict number 6! Decide on a choice by pressing a button below.", Outcome = false},
-            new Conflict { ConflictID = 7, Text = "Conflict number 7! Decide on a choice by pressing a button below.", Outcome = false},
+            new Conflict { ConflictID = 1, Text = "As you approach the spooky mountain, you see a rusty old gate leading into darkness. An old dungeon, you think to yourself. You look around the gate and see what looks to be a lever.", Outcome = false},
+            new Conflict { ConflictID = 2, Text = "The gate creaks open and you venture on. In the darkness, a shadowy presence envelopes you, and you hear a ghostly voice speak in an ancient language.", Outcome = false},
+            new Conflict { ConflictID = 3, Text = "The gate somehow swings open! You peer into the darkness and sense a pair of void eyes staring at you. The sound of heavy, boney footsteps grow louder as a skeletal dog appears out of the void!", Outcome = false},
+            new Conflict { ConflictID = 4, Text = "The now friendly shadow creature leads you through the darkness, and to another (seemingly) friendly entity. A skeletal dog! The skeletal dog approaches you, 'sniffing' the air around you.", Outcome = false},
+            new Conflict { ConflictID = 5, Text = "The creature wraps its shadowy limbs around you, and violently drags you further into the dark. The creature drops you on a sheet of ice, on the far end of which is your cat resting on solid ground.", Outcome = false},
+            new Conflict { ConflictID = 6, Text = "The skeletal dog wags its bony tail and barks at you to follow it into the dark. You both reach the end of the dungeon and the dog points to your cat resting on top of a pedestal! At the foot of the pedestal though, lies a massive ancient bear, sleeping on its stomach.", Outcome = false},
+            new Conflict { ConflictID = 7, Text = "The dog lets out an ear-piercing howl and disappears into the darkness. You suddenly hear heavier footsteps approaching. A large ancient bear, with eyes burning in the dark. It snarls at you.", Outcome = false},
         };
 
         // List of choices for each conflict (Each conflict will have 3 choices)
         public static List<Choice> choiceList = new List<Choice>()
         {
             // Choices for Conflict 1
-            new Choice { ConflictID = 1, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 1, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 1, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]", ChoiceCheck = null},
+            new Choice { ConflictID = 1, ChoiceID = 1, ChoiceText = "Pull on the lever with all your might. [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 1, ChoiceID = 2, ChoiceText = "Create a makeshift leverage extender and pull the lever. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 1, ChoiceID = 3, ChoiceText = "Scream into the darkness! [SUR]", ChoiceCheck = null},
 
             // Choices for Conflict 2
-            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 2, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 1, ChoiceText = "Flex and appear large and strong before the shadow! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 2, ChoiceText = "Act weak and hope that the shadow creature takes pity on you. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 2, ChoiceID = 3, ChoiceText = "You recognize the ancient language, ask the shadow to let you pass. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
 
             // Choices for Conflict 3
-            new Choice { ConflictID = 3, ChoiceID = 1, ChoiceText = "Choice 1 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 3, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 3, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]", ChoiceCheck = null },
+            new Choice { ConflictID = 3, ChoiceID = 1, ChoiceText = "Try to pet the skeletal dog. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 3, ChoiceID = 2, ChoiceText = "Pick up a human femur and offer it to the dog. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 3, ChoiceID = 3, ChoiceText = "Stay still, and hope the dog leaves. [SUR]", ChoiceCheck = null },
 
             // Choices for Conflict 4
-            new Choice { ConflictID = 4, ChoiceID = 1, ChoiceText = "Choice 1 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 14, AdvantageBonus = 2, DisadvantageBonus = -1},
-            new Choice { ConflictID = 4, ChoiceID = 2, ChoiceText = "Choice 2 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 4, ChoiceID = 3, ChoiceText = "Choice 3 [SURRENDER]" , ChoiceCheck = null },
+            new Choice { ConflictID = 4, ChoiceID = 1, ChoiceText = "Pet and befriend the skeletal dog. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 14, AdvantageBonus = 2, DisadvantageBonus = -1},
+            new Choice { ConflictID = 4, ChoiceID = 2, ChoiceText = "Crouch to the dog's level and allow it to 'sniff' you. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 4, ChoiceID = 3, ChoiceText = "Stare into the void of the dog's eyes. [SUR]" , ChoiceCheck = null },
 
             // Choices for Conflict 5
-            new Choice { ConflictID = 5, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 5, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 5, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 5, ChoiceID = 1, ChoiceText = "Sprint across the ice and leap towards your cat! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 5, ChoiceID = 2, ChoiceText = "Slowly walk across the ice while maintaining your balance. [SUR]", ChoiceCheck = null},
+            new Choice { ConflictID = 5, ChoiceID = 3, ChoiceText = "Penguin slide across the ice to get to solid ground! [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
 
             // Choices for Conflict 6
-            new Choice { ConflictID = 6, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 6, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 6, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 6, ChoiceID = 1, ChoiceText = "Use all your leg strength to jump to the top of the pedestal. [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 6, ChoiceID = 2, ChoiceText = "Use nonverbal signals to convince your cat to jump down the pedestal! [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 6, ChoiceID = 3, ChoiceText = "Pick your steps carefully and sneak past the sleeping bear. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
 
             // Choices for Conflict 7
-            new Choice { ConflictID = 7, ChoiceID = 1, ChoiceText = "Choice 1 [STRENGTH]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 7, ChoiceID = 2, ChoiceText = "Choice 2 [CHARISMA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 10, AdvantageBonus = 1, DisadvantageBonus = -1},
-            new Choice { ConflictID = 7, ChoiceID = 3, ChoiceText = "Choice 3 [INTELLIGENCE]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
+            new Choice { ConflictID = 7, ChoiceID = 1, ChoiceText = "Muster all your strength and punch the bear! [STR]", ChoiceCheck = attributeDictionary[0], ChoiceCheckValue = 12, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 7, ChoiceID = 2, ChoiceText = "Try to befriend the bear. [CHA]", ChoiceCheck = attributeDictionary[1], ChoiceCheckValue = 12, AdvantageBonus = 1, DisadvantageBonus = -1},
+            new Choice { ConflictID = 7, ChoiceID = 3, ChoiceText = "Stand tall and try to scare the bear. [INT]", ChoiceCheck = attributeDictionary[2], ChoiceCheckValue = 12, AdvantageBonus = 2, DisadvantageBonus = -1 },
         };
 
         // List of endings (There will be 8 available endings in total)
         public static List<Ending> endingList = new List<Ending>()
         {
-            new Ending { EndingID = 1, EndingText = "You get Ending 1!"},
-            new Ending { EndingID = 2, EndingText = "You get Ending 2!"},
-            new Ending { EndingID = 3, EndingText = "You get Ending 3!"},
-            new Ending { EndingID = 4, EndingText = "You get Ending 4!"},
-            new Ending { EndingID = 5, EndingText = "You get Ending 5!"},
-            new Ending { EndingID = 6, EndingText = "You get Ending 6!"},
-            new Ending { EndingID = 7, EndingText = "You get Ending 7!"},
-            new Ending { EndingID = 8, EndingText = "You get Ending 8!"},
+            new Ending { EndingID = 1, EndingText = "The skeletal dog leads you to where your Mr. Mustard is! You grab him tight and (as if by magic) get portaled back to the dungeon entrance!"},
+            new Ending { EndingID = 2, EndingText = "The skeletal dog emits a ghastly howl and runs back into the darkness! You chase after it, only to find it hunched over a small bloody corpse. Mr. Mustard! It then turns to you..."},
+            new Ending { EndingID = 3, EndingText = "You reach solid ground and reunite with Mr. Mustard. He points you to a secret ladder which leads to the outside world!"},
+            new Ending { EndingID = 4, EndingText = "You hear the ice break and you sink to the cold depths below."},
+            new Ending { EndingID = 5, EndingText = "You successfully reunite with Mr. Mustard! Touching him triggers a portal which takes you both back to the dungeon entrance!"},
+            new Ending { EndingID = 6, EndingText = "The ancient bear opens its burning eyes, stands up, and swings its claw at you, killing you with one swipe."},
+            new Ending { EndingID = 7, EndingText = "The bear winces, and then leaves you alone. You run further into the darkness until you find Mr. Mustard sleeping in a corner. You both venture back across the dungeon to safety."},
+            new Ending { EndingID = 8, EndingText = "The bear pauses, and in a split second bites your head clean off!"},
         };
         
         // Constructor for GamePlay class with player and GameSetup form as input
@@ -116,7 +117,12 @@ namespace FinalProject
                 characterAvtar.Image = Properties.Resources.avatar_scholar;
             }
             SetupAttriButes(); // Setup player attributes
+
             SetupChoices(); // Setup player choices
+
+            // Setup Story Intro box
+            GameStoryIntro gameStoryIntro = new GameStoryIntro();
+            gameStoryIntro.ShowDialog();
         }
 
         // Method to setup player attributes
@@ -129,15 +135,20 @@ namespace FinalProject
         // Method to setup choices
         private void SetupChoices()
         {
+            // Setup initial choices
+            currentChoiceList.Add(choiceList[0]);
+            currentChoiceList.Add(choiceList[1]);
+            currentChoiceList.Add(choiceList[2]);
+
             // Update text for each buttons
-            btn_Choice1.Text = choiceList[0].ChoiceText;
-            btn_Choice2.Text = choiceList[1].ChoiceText;
-            btn_Choice3.Text = choiceList[2].ChoiceText;
+            btn_Choice1.Text = currentChoiceList[0].ChoiceText;
+            btn_Choice2.Text = currentChoiceList[1].ChoiceText;
+            btn_Choice3.Text = currentChoiceList[2].ChoiceText;
 
             // Update tags for each button
-            btn_Choice1.Tag = choiceList[0].ChoiceID;
-            btn_Choice2.Tag = choiceList[1].ChoiceID;
-            btn_Choice3.Tag = choiceList[2].ChoiceID;
+            btn_Choice1.Tag = currentChoiceList[0].ChoiceID;
+            btn_Choice2.Tag = currentChoiceList[1].ChoiceID;
+            btn_Choice3.Tag = currentChoiceList[2].ChoiceID;
 
             SetupConflict(); // Setup player conflict
         }
@@ -149,7 +160,8 @@ namespace FinalProject
             currentConflict = new Conflict();
             currentConflict = conflictList[0]; // Get 1st conflict
             lbl_ConflictText.Content = currentConflict.Text; // Update text
-            lbl_ConflictText.FontSize = 18; // Update font size
+            lbl_ConflictText.WrapWidth = 800;
+            lbl_ConflictText.FontSize = 14; // Update font size
         }
 
         // Method to Update choices
@@ -170,6 +182,8 @@ namespace FinalProject
                 btn_Choice2.Tag = newChoiceList[1].ChoiceID;
                 btn_Choice3.Tag = newChoiceList[2].ChoiceID;
             }
+
+            currentChoiceList = newChoiceList; // Update currentChoiceList with new choices
         }
 
         // Method to update conflict
@@ -259,35 +273,35 @@ namespace FinalProject
             SoundEffect.MouseClickSound();
             // Roll the dice
             int roll = dice.Roll();
-            if (choiceList[0].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
+            if (currentChoiceList[0].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
             {
                 if (generatedPlayer.Strength > 10)
                 {
                     int adv = generatedPlayer.Strength - 10;
-                    if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false;  // Outcome is false
                         // If player with Strength Adv fails, reduce their Strength attribute   
-                        generatedPlayer.Strength += choiceList[0].DisadvantageBonus;
+                        generatedPlayer.Strength += currentChoiceList[0].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Strength < 10)
                 {
                     int disadv = 10 - generatedPlayer.Strength; 
-                    if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Strength Adv succeeds, add their Strength attribute
-                        generatedPlayer.Strength += choiceList[0].AdvantageBonus;
+                        generatedPlayer.Strength += currentChoiceList[0].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -295,47 +309,47 @@ namespace FinalProject
                 }
                 else if (generatedPlayer.Strength == 10) //if no Adv: Strength = 10, no added Adv
                 {
-                    if (roll >= choiceList[0].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[0].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[0].ChoiceCheck == attributeDictionary[1]) // If ChoiceCheck is Charisma
+            else if (currentChoiceList[0].ChoiceCheck == attributeDictionary[1]) // If ChoiceCheck is Charisma
             {
                 if (generatedPlayer.Charisma > 10)
                 {
                     int adv = generatedPlayer.Charisma - 10; // Player with Charisma > 10 has Adv
-                    if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Charisma Adv fails, reduce their Charisma attribute   
-                        generatedPlayer.Charisma += choiceList[0].DisadvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[0].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Charisma < 10)
                 {
                     int disadv = 10 - generatedPlayer.Charisma; //player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Charisma Adv succeeds, add their Charisma attribute
-                        generatedPlayer.Charisma += choiceList[0].AdvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[0].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -343,47 +357,47 @@ namespace FinalProject
                 }
                 else //if no Adv: Charisma = 10, no added Adv
                 {
-                    if (roll >= choiceList[0].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[0].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[0].ChoiceCheck == attributeDictionary[2]) // If ChoiceCheck is Int
+            else if (currentChoiceList[0].ChoiceCheck == attributeDictionary[2]) // If ChoiceCheck is Int
             {
                 if (generatedPlayer.Intelligence > 10)
                 {
                     int adv = generatedPlayer.Intelligence - 10; // Player with Int > 10 has Adv
-                    if ((roll + adv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Intelligence Adv fails, reduce their Intelligence attribute   
-                        generatedPlayer.Intelligence += choiceList[0].DisadvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[0].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Intelligence < 10)
                 {
                     int disadv = 10 - generatedPlayer.Intelligence; //player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[0].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Intelligence Adv succeeds, add their Intelligence attribute
-                        generatedPlayer.Intelligence += choiceList[0].AdvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[0].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[0].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -391,19 +405,19 @@ namespace FinalProject
                 }
                 else // if no Adv: Intelligence = 10, no added Adv
                 {
-                    if (roll >= choiceList[0].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[0].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[0].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[0].ChoiceCheck == null) // if ChoiceCheck is null, auto-fail the conflict
+            else if (currentChoiceList[0].ChoiceCheck == null) // if ChoiceCheck is null, auto-fail the conflict
             {
                 conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false; // Outcome is false
@@ -423,35 +437,35 @@ namespace FinalProject
             SoundEffect.MouseClickSound();
             // Roll the dice
             int roll = dice.Roll();
-            if (choiceList[1].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
+            if (currentChoiceList[1].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
             {
                 if (generatedPlayer.Strength > 10)
                 {
                     int adv = generatedPlayer.Strength - 10; // Player with Str > 10 has Adv
-                    if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Strength Adv fails, reduce their Strength attribute   
-                        generatedPlayer.Strength += choiceList[1].DisadvantageBonus;
+                        generatedPlayer.Strength += currentChoiceList[1].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Strength < 10)
                 {
                     int disadv = 10 - generatedPlayer.Strength; // Player with Str < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Strength Adv succeeds, add their Strength attribute
                         generatedPlayer.Strength += choiceList[1].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -459,47 +473,47 @@ namespace FinalProject
                 }
                 else //if no Adv: Strength = 10, no added Adv
                 {
-                    if (roll >= choiceList[1].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[1].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[1].ChoiceCheck == attributeDictionary[1]) // if ChoiceCheck is Charisma
+            else if (currentChoiceList[1].ChoiceCheck == attributeDictionary[1]) // if ChoiceCheck is Charisma
             {
                 if (generatedPlayer.Charisma > 10)
                 {
                     int adv = generatedPlayer.Charisma - 10; //player with Cha > 10 has Adv
-                    if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Charisma Adv fails, reduce their Charisma attribute   
-                        generatedPlayer.Charisma += choiceList[1].DisadvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[1].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Charisma < 10)
                 {
                     int disadv = 10 - generatedPlayer.Charisma; // Player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Charisma Adv succeeds, add their Charisma attribute
-                        generatedPlayer.Charisma += choiceList[1].AdvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[1].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -507,47 +521,47 @@ namespace FinalProject
                 }
                 else //if no Adv: Charisma = 10, no added Adv
                 {
-                    if (roll >= choiceList[1].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[1].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[1].ChoiceCheck == attributeDictionary[2]) // If ChoiceCheck is Intelligence
+            else if (currentChoiceList[1].ChoiceCheck == attributeDictionary[2]) // If ChoiceCheck is Intelligence
             {
                 if (generatedPlayer.Intelligence > 10)
                 {
                     int adv = generatedPlayer.Intelligence - 10; // Player with Int > 10 has Adv
-                    if ((roll + adv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Intelligence Adv fails, reduce their Intelligence attribute   
-                        generatedPlayer.Intelligence += choiceList[1].DisadvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[1].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Intelligence < 10)
                 {
                     int disadv = 10 - generatedPlayer.Intelligence; // Player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[1].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Intelligence Adv succeeds, add their Intelligence attribute
-                        generatedPlayer.Intelligence += choiceList[1].AdvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[1].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[1].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -555,19 +569,19 @@ namespace FinalProject
                 }
                 else //if no Adv: Intelligence = 10, no added Adv
                 {
-                    if (roll >= choiceList[1].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[1].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[1].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[1].ChoiceCheck == null) // if ChoiceCheck is null, auto-fail the conflict
+            else if (currentChoiceList[1].ChoiceCheck == null) // if ChoiceCheck is null, auto-fail the conflict
             {
                 conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false;
@@ -587,35 +601,35 @@ namespace FinalProject
             SoundEffect.MouseClickSound();
             // Roll the dice
             int roll = dice.Roll();
-            if (choiceList[2].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
+            if (currentChoiceList[2].ChoiceCheck == attributeDictionary[0]) // If ChoiceCheck is Str
             {
                 if (generatedPlayer.Strength > 10)
                 {
                     int adv = generatedPlayer.Strength - 10; // Player with Str > 10 has Adv
-                    if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Strength Adv fails, reduce their Strength attribute   
-                        generatedPlayer.Strength += choiceList[2].DisadvantageBonus;
+                        generatedPlayer.Strength += currentChoiceList[2].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Strength < 10)
                 {
                     int disadv = 10 - generatedPlayer.Strength; // Player with Str < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Strength Adv succeeds, add their Strength attribute
-                        generatedPlayer.Strength += choiceList[2].AdvantageBonus;
+                        generatedPlayer.Strength += currentChoiceList[2].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -623,47 +637,47 @@ namespace FinalProject
                 }
                 else //if no Adv: Strength = 10, no added Adv
                 {
-                    if (roll >= choiceList[2].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[2].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[2].ChoiceCheck == attributeDictionary[1]) // If ChoiceCheck is Charisma
+            else if (currentChoiceList[2].ChoiceCheck == attributeDictionary[1]) // If ChoiceCheck is Charisma
             {
                 if (generatedPlayer.Charisma > 10)
                 {
                     int adv = generatedPlayer.Charisma - 10; //player with Cha > 10 has Adv
-                    if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Charisma Adv fails, reduce their Charisma attribute   
-                        generatedPlayer.Charisma += choiceList[2].DisadvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[2].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Charisma < 10)
                 {
                     int disadv = 10 - generatedPlayer.Charisma; // Player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Charisma Adv succeeds, add their Charisma attribute
-                        generatedPlayer.Charisma += choiceList[2].AdvantageBonus;
+                        generatedPlayer.Charisma += currentChoiceList[2].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -671,47 +685,47 @@ namespace FinalProject
                 }
                 else //if no Adv: Charisma = 10, no added Adv
                 {
-                    if (roll >= choiceList[2].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[2].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[2].ChoiceCheck == attributeDictionary[2]) //if ChoiceCheck is Intelligence
+            else if (currentChoiceList[2].ChoiceCheck == attributeDictionary[2]) //if ChoiceCheck is Intelligence
             {
                 if (generatedPlayer.Intelligence > 10)
                 {
                     int adv = generatedPlayer.Intelligence - 10; // Player with Int > 10 has Adv
-                    if ((roll + adv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll + adv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if ((roll + adv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll + adv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + adv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                         // If player with Intelligence Adv fails, reduce their Intelligence attribute   
-                        generatedPlayer.Intelligence += choiceList[2].DisadvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[2].DisadvantageBonus;
                     }
                 }
                 else if (generatedPlayer.Intelligence < 10)
                 {
                     int disadv = 10 - generatedPlayer.Intelligence; // Player with Cha < 10 has Disadv
-                    if ((roll - disadv) >= choiceList[2].ChoiceCheckValue)
+                    if ((roll - disadv) >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                         // If player without Intelligence Adv succeeds, add their Intelligence attribute
-                        generatedPlayer.Intelligence += choiceList[2].AdvantageBonus;
+                        generatedPlayer.Intelligence += currentChoiceList[2].AdvantageBonus;
                     }
-                    else if ((roll - disadv) < choiceList[2].ChoiceCheckValue)
+                    else if ((roll - disadv) < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + (roll + disadv) + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
@@ -719,19 +733,19 @@ namespace FinalProject
                 }
                 else //if no Adv: Intelligence = 10, no added Adv
                 {
-                    if (roll >= choiceList[2].ChoiceCheckValue)
+                    if (roll >= currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Success!";
                         currentConflict.Outcome = true; // Outcome is true
                     }
-                    else if (roll < choiceList[2].ChoiceCheckValue)
+                    else if (roll < currentChoiceList[2].ChoiceCheckValue)
                     {
                         conflictResult = "You rolled " + roll + ". Failure!";
                         currentConflict.Outcome = false; // Outcome is false
                     }
                 }
             }
-            else if (choiceList[2].ChoiceCheck == null) // If ChoiceCheck is null, auto-fail the conflict
+            else if (currentChoiceList[2].ChoiceCheck == null) // If ChoiceCheck is null, auto-fail the conflict
             {
                 conflictResult = "You selected the Surrender option!";
                 currentConflict.Outcome = false;

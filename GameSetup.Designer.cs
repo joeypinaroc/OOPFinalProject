@@ -56,35 +56,36 @@
             this.panel_CreatePlayer.Controls.Add(this.lbl_CPJob);
             this.panel_CreatePlayer.Controls.Add(this.tb_Name);
             this.panel_CreatePlayer.Controls.Add(this.lbl_CPName);
-            this.panel_CreatePlayer.Location = new System.Drawing.Point(76, 160);
-            this.panel_CreatePlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_CreatePlayer.Location = new System.Drawing.Point(61, 128);
             this.panel_CreatePlayer.Name = "panel_CreatePlayer";
-            this.panel_CreatePlayer.Size = new System.Drawing.Size(941, 437);
+            this.panel_CreatePlayer.Size = new System.Drawing.Size(753, 350);
             this.panel_CreatePlayer.TabIndex = 2;
             this.panel_CreatePlayer.Visible = false;
             // 
             // statusBar
             // 
             this.statusBar.BackColor = System.Drawing.Color.Transparent;
-            this.statusBar.Location = new System.Drawing.Point(-7, 161);
+            this.statusBar.Location = new System.Drawing.Point(-6, 129);
+            this.statusBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(498, 123);
+            this.statusBar.Size = new System.Drawing.Size(398, 98);
             this.statusBar.TabIndex = 10;
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(319, 218);
+            this.hScrollBar1.Location = new System.Drawing.Point(255, 174);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(8, 8);
+            this.hScrollBar1.Size = new System.Drawing.Size(6, 8);
             this.hScrollBar1.TabIndex = 9;
             // 
             // characterImg
             // 
             this.characterImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.characterImg.Image = global::FinalProject.Properties.Resources.farmer;
-            this.characterImg.Location = new System.Drawing.Point(654, 22);
+            this.characterImg.Location = new System.Drawing.Point(523, 18);
+            this.characterImg.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.characterImg.Name = "characterImg";
-            this.characterImg.Size = new System.Drawing.Size(282, 384);
+            this.characterImg.Size = new System.Drawing.Size(226, 308);
             this.characterImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.characterImg.TabIndex = 7;
             this.characterImg.TabStop = false;
@@ -96,10 +97,9 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(164, 303);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(131, 242);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 70);
+            this.button1.Size = new System.Drawing.Size(205, 56);
             this.button1.TabIndex = 6;
             this.button1.Text = "CREATE";
             this.button1.UseVisualStyleBackColor = false;
@@ -110,10 +110,9 @@
             this.cb_Job.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Job.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Job.FormattingEnabled = true;
-            this.cb_Job.Location = new System.Drawing.Point(162, 94);
-            this.cb_Job.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Job.Location = new System.Drawing.Point(130, 75);
             this.cb_Job.Name = "cb_Job";
-            this.cb_Job.Size = new System.Drawing.Size(297, 49);
+            this.cb_Job.Size = new System.Drawing.Size(238, 40);
             this.cb_Job.TabIndex = 3;
             this.cb_Job.SelectedIndexChanged += new System.EventHandler(this.cb_Job_SelectedIndexChanged);
             // 
@@ -122,20 +121,18 @@
             this.lbl_CPJob.AutoSize = true;
             this.lbl_CPJob.Font = new System.Drawing.Font("Segoe UI Semibold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CPJob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbl_CPJob.Location = new System.Drawing.Point(58, 91);
-            this.lbl_CPJob.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_CPJob.Location = new System.Drawing.Point(46, 73);
             this.lbl_CPJob.Name = "lbl_CPJob";
-            this.lbl_CPJob.Size = new System.Drawing.Size(96, 50);
+            this.lbl_CPJob.Size = new System.Drawing.Size(78, 41);
             this.lbl_CPJob.TabIndex = 2;
             this.lbl_CPJob.Text = "JOB:";
             // 
             // tb_Name
             // 
             this.tb_Name.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Name.Location = new System.Drawing.Point(162, 22);
-            this.tb_Name.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_Name.Location = new System.Drawing.Point(130, 18);
             this.tb_Name.Name = "tb_Name";
-            this.tb_Name.Size = new System.Drawing.Size(347, 47);
+            this.tb_Name.Size = new System.Drawing.Size(278, 39);
             this.tb_Name.TabIndex = 1;
             // 
             // lbl_CPName
@@ -143,10 +140,9 @@
             this.lbl_CPName.AutoSize = true;
             this.lbl_CPName.Font = new System.Drawing.Font("Segoe UI Semibold", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CPName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.lbl_CPName.Location = new System.Drawing.Point(18, 22);
-            this.lbl_CPName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_CPName.Location = new System.Drawing.Point(14, 18);
             this.lbl_CPName.Name = "lbl_CPName";
-            this.lbl_CPName.Size = new System.Drawing.Size(137, 50);
+            this.lbl_CPName.Size = new System.Drawing.Size(112, 41);
             this.lbl_CPName.TabIndex = 0;
             this.lbl_CPName.Text = "NAME:";
             // 
@@ -157,10 +153,9 @@
             this.btn_WelcomeCreatePlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_WelcomeCreatePlayer.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_WelcomeCreatePlayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_WelcomeCreatePlayer.Location = new System.Drawing.Point(320, 244);
-            this.btn_WelcomeCreatePlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_WelcomeCreatePlayer.Location = new System.Drawing.Point(256, 195);
             this.btn_WelcomeCreatePlayer.Name = "btn_WelcomeCreatePlayer";
-            this.btn_WelcomeCreatePlayer.Size = new System.Drawing.Size(414, 91);
+            this.btn_WelcomeCreatePlayer.Size = new System.Drawing.Size(331, 73);
             this.btn_WelcomeCreatePlayer.TabIndex = 5;
             this.btn_WelcomeCreatePlayer.Text = "CREATE YOUR PLAYER";
             this.btn_WelcomeCreatePlayer.UseVisualStyleBackColor = false;
@@ -172,10 +167,12 @@
             this.textHolder_Title.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.textHolder_Title.Content = "Text Placeholder";
             this.textHolder_Title.FontSize = 36;
-            this.textHolder_Title.Location = new System.Drawing.Point(76, 52);
+            this.textHolder_Title.Location = new System.Drawing.Point(61, 42);
+            this.textHolder_Title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textHolder_Title.Name = "textHolder_Title";
-            this.textHolder_Title.Size = new System.Drawing.Size(941, 107);
+            this.textHolder_Title.Size = new System.Drawing.Size(753, 86);
             this.textHolder_Title.TabIndex = 6;
+            this.textHolder_Title.WrapWidth = 0;
             // 
             // btn_About
             // 
@@ -184,10 +181,9 @@
             this.btn_About.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_About.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_About.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_About.Location = new System.Drawing.Point(320, 374);
-            this.btn_About.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_About.Location = new System.Drawing.Point(256, 299);
             this.btn_About.Name = "btn_About";
-            this.btn_About.Size = new System.Drawing.Size(414, 91);
+            this.btn_About.Size = new System.Drawing.Size(331, 73);
             this.btn_About.TabIndex = 7;
             this.btn_About.Text = "ABOUT";
             this.btn_About.UseVisualStyleBackColor = false;
@@ -195,17 +191,16 @@
             // 
             // GameSetup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::FinalProject.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1082, 603);
+            this.ClientSize = new System.Drawing.Size(866, 482);
             this.Controls.Add(this.panel_CreatePlayer);
             this.Controls.Add(this.textHolder_Title);
             this.Controls.Add(this.btn_WelcomeCreatePlayer);
             this.Controls.Add(this.btn_About);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "GameSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
